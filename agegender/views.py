@@ -8,10 +8,16 @@ from django.core.files.storage import default_storage
 from django.http import StreamingHttpResponse
 from .forms import ImageUploadForm
 from .models import UploadedImage
+import os
 
 # Load models
-age_model = load_model(r"Models\pretrained-age-detection.h5", custom_objects={"mae": MeanAbsoluteError()})
-gender_model = load_model(r"Models\best_model.keras")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+age_model = load_model(os.path.join(BASE_DIR, "pretrained-age-detection.h5"),custom_objects={"mae": MeanAbsoluteError()})
+gender_model = load_model(os.path.join(BASE_DIR, "best_model.keras"))
+
+#ge_model = load_model(r"pretrained-age-detection.h5", custom_objects={"mae": MeanAbsoluteError()})
+#gender_model = load_model(r"best_model.keras")
 face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
 
 # Home Page
