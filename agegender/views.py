@@ -10,8 +10,8 @@ from .forms import ImageUploadForm
 from .models import UploadedImage
 
 # Load models
-age_model = load_model(r"C:\Users\Dipak\Desktop\Final Year Project\Models\pretrained-age-detection.h5", custom_objects={"mae": MeanAbsoluteError()})
-gender_model = load_model(r"C:\Users\Dipak\Desktop\Final Year Project\Models\best_model.keras")
+age_model = load_model(r"Models\pretrained-age-detection.h5", custom_objects={"mae": MeanAbsoluteError()})
+gender_model = load_model(r"Models\best_model.keras")
 face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
 
 # Home Page
@@ -94,4 +94,3 @@ def live_detection(request):
 # Live Video Streaming Route
 def live_video_feed(request):
     return StreamingHttpResponse(generate_frames(), content_type='multipart/x-mixed-replace; boundary=frame')
-    
