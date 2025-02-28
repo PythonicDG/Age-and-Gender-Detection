@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Age & Gender Detection</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <style>
+        /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #111;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #222;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.1);
+}
+
+/* Live Video */
+.video-container {
+    margin: 20px 0;
+}
+
+.live-feed {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+    border: 3px solid #4CAF50;
+    box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Buttons */
+.buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background: #4CAF50;
+    padding: 12px 20px;
+    border-radius: 5px;
+    margin: 10px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #45a049;
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Live Age & Gender Detection</h1>
+
+        <div class="video-container">
+            <h3>Live Camera Feed:</h3>
+            <img src="{% url 'live_video_feed' %}" class="live-feed">
+        </div>
+
+        <div class="buttons">
+            <a href="{% url 'home' %}" class="btn">Back to Home</a>
+            <a href="{% url 'upload_image' %}" class="btn">Upload an Image</a>
+        </div>
+    </div>
+
+</body>
+</html>
