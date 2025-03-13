@@ -25,8 +25,7 @@ SECRET_KEY = 'django-insecure-8q542sz4t=!y6^a7wqobdltmh@g_7wqwi82&m6qzcek1c-pajh
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['age-and-gender-detection-i3pm.onrender.com','127.0.0.1', 'localhost']
-
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
